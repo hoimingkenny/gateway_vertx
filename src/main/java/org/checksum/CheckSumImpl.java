@@ -1,6 +1,6 @@
 package org.checksum;
 
-public class ICheckSumImpl implements ICheckSum
+public class CheckSumImpl implements ICheckSum
 {
 	@Override
 	public byte getChecksum(byte[] data)
@@ -12,6 +12,6 @@ public class ICheckSumImpl implements ICheckSum
 			sum ^= b;
 		}
 
-		return 0;
+		return sum;
 	}
 }

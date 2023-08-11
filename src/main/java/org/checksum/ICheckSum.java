@@ -1,2 +1,6 @@
-package org.checksum;public interface ICheckSum {
+package org.checksum;
+
+public interface ICheckSum
+{
+	byte getChecksum(byte[] data);
 }

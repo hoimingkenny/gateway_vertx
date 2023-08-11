@@ -1,11 +1,13 @@
 package org.codec;
 
+import com.alipay.remoting.serialization.Serializer;
 import com.alipay.remoting.serialization.SerializerManager;
-import org.checksum.ICheckSum;
+import org.checksum.CheckSumImpl;
 
 import java.io.Serializable;
 
-public class IBodyCodecImpl implements IBodyCodec
+
+public class BodyCodecImpl implements IBodyCodec
 {
 	@Override
 	public <T> byte[] serialize(T obj) throws Exception {
@@ -18,18 +20,27 @@ public class IBodyCodecImpl implements IBodyCodec
 		return SerializerManager.getSerializer(SerializerManager.Hessian2).deserialize(bytes,clazz.getName());
 	}
 
+	static class A implements Serializable {
+		public String a;
+	}
 
 	public static void main(String[] args) throws Exception {
+//		A a = new A();
+//		a.a = "test";
+//
+//		byte[] serialize = new BodyCodecImpl().serialize(a);
+//		A deserialize = new BodyCodecImpl().deserialize(serialize, A.class);
+//
+//		System.out.println(deserialize.a);
+
 		String a = "test";
 		String b = "test1";
 		String c = "test";
-		byte ca = new ICheckSum().getChecksum(a.getBytes());
-		byte cb = new ICheckSum().getChecksum(b.getBytes());
-		byte cc = new ICheckSum().getChecksum(c.getBytes());
+		byte ca = new CheckSumImpl().getChecksum(a.getBytes());
+		byte cb = new CheckSumImpl().getChecksum(b.getBytes());
+		byte cc = new CheckSumImpl().getChecksum(c.getBytes());
 		System.out.println(ca);
 		System.out.println(cb);
 		System.out.println(cc);
-
-
 	}
 }
