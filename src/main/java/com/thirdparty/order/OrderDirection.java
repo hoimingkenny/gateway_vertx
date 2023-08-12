@@ -13,26 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.order;
+package com.thirdparty.order;
 
 import lombok.Getter;
 
 @Getter
-public enum OrderType {
-	LIMIT(0); // Immediate or Cancel - equivalent to strict-risk market order
+public enum OrderDirection {
+	//从现金的角度来理解这方面的约定规则，0就是把钱花了，没钱
+	BUY(0),
+	SELL(1),
 
-	private byte type;
+	PLUS_BALANCE(2),
+	MINUS_BALANCE(3),
 
-	OrderType(int type) {
-		this.type = (byte) type;
+	OTHER(-1);//其他类型执行(撤单 等)
+
+	private byte direction;
+
+	OrderDirection(int direction) {
+		this.direction = (byte) direction;
 	}
 
-	public static OrderType of(byte type) {
-		switch (type) {
+	public static OrderDirection of(byte direction) {
+		switch (direction) {
 			case 0:
-				return LIMIT;
+				return BUY;
+			case 1:
+				return SELL;
+			case 2:
+				return PLUS_BALANCE;
+			case 3:
+				return MINUS_BALANCE;
+			case -1:
+				return OTHER;
 			default:
-				throw new IllegalArgumentException("unknown OrderType:" + type);
+				throw new IllegalArgumentException("unknown OrderDirection:" + direction);
 		}
 	}
 

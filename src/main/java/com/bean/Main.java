@@ -1,4 +1,4 @@
-package org;
+package com.bean;
 
 public class Main
 {

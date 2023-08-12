@@ -1,4 +1,4 @@
-package org.bean;
+package com.thirdparty.bean;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -34,7 +34,6 @@ public class CommonMsg implements Serializable {
 
 	@ToString.Exclude
 	private byte[] body;
-
 
 	////////////////////////////////
 	private boolean isLegal;

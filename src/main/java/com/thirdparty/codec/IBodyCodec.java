@@ -1,4 +1,4 @@
-package org.codec;
+package com.thirdparty.codec;
 
 public interface IBodyCodec {
 

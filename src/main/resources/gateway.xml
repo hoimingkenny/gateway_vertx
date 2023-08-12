@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gateway>
+    <!-- gateway ID -->
+    <id>1001</id>
+
+    <!-- exposed port -->
+    <recvport>8091</recvport>
+
+</gateway>

@@ -1,4 +1,4 @@
-package org.order;
+package com.thirdparty.order;
 
 import lombok.Builder;
 import lombok.ToString;
@@ -53,6 +53,4 @@ public class OrderCmd implements Serializable {
 	 * 委托编号
 	 */
 	public long oid;
-
-
 }

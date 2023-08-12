@@ -1,4 +1,4 @@
-package org.uuid;
+package com.thirdparty.uuid;
 /**
  * Twitter_Snowflake<br>
  * SnowFlake的结构如下(每部分用-分开):<br>

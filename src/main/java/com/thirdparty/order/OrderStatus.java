@@ -1,4 +1,4 @@
-package org.order;
+package com.thirdparty.order;
 
 import lombok.Getter;
 

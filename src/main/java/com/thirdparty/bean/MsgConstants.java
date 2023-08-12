@@ -1,4 +1,4 @@
-package org.bean;
+package com.thirdparty.bean;
 
 public class MsgConstants {
 	//消息來源

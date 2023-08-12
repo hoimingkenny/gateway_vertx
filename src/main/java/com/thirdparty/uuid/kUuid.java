@@ -1,4 +1,4 @@
-package org.uuid;
+package com.thirdparty.uuid;
 
 public class kUuid
 {

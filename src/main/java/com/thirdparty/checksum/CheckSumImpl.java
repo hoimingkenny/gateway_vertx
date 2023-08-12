@@ -1,4 +1,4 @@
-package org.checksum;
+package com.thirdparty.checksum;
 
 public class CheckSumImpl implements ICheckSum
 {

@@ -1,4 +1,4 @@
-package org;
+package com.bean;
 
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;

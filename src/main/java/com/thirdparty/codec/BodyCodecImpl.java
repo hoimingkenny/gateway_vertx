@@ -1,20 +1,21 @@
-package org.codec;
+package com.thirdparty.codec;
 
-import com.alipay.remoting.serialization.Serializer;
 import com.alipay.remoting.serialization.SerializerManager;
-import org.checksum.CheckSumImpl;
+import com.thirdparty.checksum.CheckSumImpl;
 
 import java.io.Serializable;
 
 
 public class BodyCodecImpl implements IBodyCodec
 {
+	// 1. object -> byte[]
 	@Override
 	public <T> byte[] serialize(T obj) throws Exception {
 		//1. jdk 序列化 //2. json //3.自定义算法（Hessian2）
 		return SerializerManager.getSerializer(SerializerManager.Hessian2).serialize(obj);
 	}
 
+	// 2. byte[] -> object
 	@Override
 	public <T> T deserialize(byte[] bytes, Class<T> clazz) throws Exception {
 		return SerializerManager.getSerializer(SerializerManager.Hessian2).deserialize(bytes,clazz.getName());

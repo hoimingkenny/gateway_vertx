@@ -1,4 +1,4 @@
-package org;
+package com.bean;
 
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
@@ -42,7 +42,7 @@ public class TcpClient
 					reconnect();
 				});
 
-				// excception handler
+				// exception handler
 				socket.exceptionHandler(e -> {
 					log.info("Socket exception", e);
 				});
